@@ -17,6 +17,39 @@ body {
 .card{
     flex-grow: 1 !important;
 }
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+  }
+  .lightbox-content {
+    position: relative;
+    margin: auto;
+    padding: 10px;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+  }
+  .lightbox-content img {
+    width: 100%;
+    margin: auto;
+    height: auto;
+  }
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #fff;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+  }
 
 .cimage {
     width: 100%;

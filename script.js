@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const filterButtons = document.querySelectorAll(".nav-link");
     const filterCards = document.querySelectorAll(".col");
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImage = document.getElementById("lightbox-image");
+    const closeBtn = document.querySelector(".close");
   
     filterButtons.forEach(button => {
       button.addEventListener("click", function (event) {
@@ -22,6 +25,24 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
       });
+    });
+  
+    const images = document.querySelectorAll(".cimage");
+    images.forEach(image => {
+      image.addEventListener("click", function () {
+        lightbox.style.display = "block";
+        lightboxImage.src = this.src;
+      });
+    });
+  
+    closeBtn.addEventListener("click", function () {
+      lightbox.style.display = "none";
+    });
+  
+    lightbox.addEventListener("click", function (event) {
+      if (event.target !== lightboxImage) {
+        lightbox.style.display = "none";
+      }
     });
   });
   

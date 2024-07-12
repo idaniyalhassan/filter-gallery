@@ -27,7 +27,9 @@ body {
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.8);
+
   }
+
   .lightbox-content {
     position: relative;
     margin: auto;
@@ -35,10 +37,27 @@ body {
     width: 80%;
     max-width: 700px;
     text-align: center;
+    align-items: center;
+    align-content: center;
+    animation: scaleUp 0.5s;
+}
+.lightbox-title {
+    color: #fff;
+    font-size: 24px;
+    margin: 10px 0;
   }
+@keyframes scaleUp {
+  from {transform: scale(0.8);}
+  to {transform: scale(1);}
+}
+
+
   .lightbox-content img {
     width: 100%;
     margin: auto;
+    align-items: center;
+    text-align: center;
+    border: 2px solid #fff;
     height: auto;
   }
   .close {

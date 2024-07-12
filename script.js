@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const filterCards = document.querySelectorAll(".col");
     const lightbox = document.getElementById("lightbox");
     const lightboxImage = document.getElementById("lightbox-image");
+    const lightboxTitle = document.getElementById("lightbox-title");
     const closeBtn = document.querySelector(".close");
   
     filterButtons.forEach(button => {
@@ -31,7 +32,11 @@ document.addEventListener("DOMContentLoaded", function () {
     images.forEach(image => {
       image.addEventListener("click", function () {
         lightbox.style.display = "block";
+        lightbox.style.transitionDuration = "0.5s";
         lightboxImage.src = this.src;
+        const card = this.closest(".col");
+        const title = card.querySelector(".card-title").innerText;
+        lightboxTitle.innerText = title;
       });
     });
   
@@ -40,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   
     lightbox.addEventListener("click", function (event) {
-      if (event.target !== lightboxImage) {
+      if (event.target !== lightboxImage && event.target !== lightboxTitle) {
         lightbox.style.display = "none";
       }
     });
